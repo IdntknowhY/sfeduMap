@@ -1,0 +1,9 @@
+.questions-card{
+    margin: 0 150px;
+}
+
+@media (min-width: 300px) and (max-width: 1400px){
+    .questions-card{
+        margin: 0;
+    }
+}

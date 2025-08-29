@@ -1,0 +1,160 @@
+
+/* Main */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  .navbar {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .navbar .nav-list button {
+    color: black;
+  }
+
+  .navbar .nav-list button:hover {
+    color: black;
+  }
+  
+  .arti_h2 {
+    color: black;
+  }
+
+  .arti_text {
+    background: white;
+  }
+
+  .questionsContainer button[type="submit"] {
+    border: 1px solid black;
+    background: white;
+    color: black;
+  }
+
+  .questionsContainer button[type="submit"]:hover {
+    background: black;
+    color: white;
+  }
+
+  .questionsUl button{
+    border: 1px solid black;
+  }
+
+  .questionsUl button:hover{
+    background: black;
+    color: white;
+  }
+
+  .footerContainer {
+    background-color: black;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: black;
+  }
+
+  /* Header */
+  .help-btn {
+    border: 1px solid white;
+  }
+
+  .help-btn:hover {
+    background: white;
+    color: black;
+  }
+
+  .lang-btn {
+    border: 1px solid white;
+  }
+
+  .lang-btn:hover {
+    background: white;
+    color: black;
+  }
+
+  .dropdown li:hover {
+    background: white;
+    color: black;
+  }
+  
+  .dropdown {
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.192);
+  }
+
+  .arti_text {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .h2_header {
+    color: white;
+  }
+
+  .h4_header {
+    color: white;
+  }
+
+  .questionsContainer button {
+    border: 1px solid black;
+    background: black;
+  }
+
+  .questionsContainer textarea {
+    background: black;
+    border: 1px solid white;
+  }
+
+  .questionsContainer input {
+    background: black;
+    border: 1px solid white;
+  }
+
+  .questionsUl button {
+    border: 1px solid white;
+  }
+
+  .questionsContainer button[type="submit"] {
+    border: 1px solid white;
+    background: black;
+    color: white;
+  }
+
+  .questionsContainer button[type="submit"]:hover {
+    background: white;
+    color: black;
+  }
+
+  .questionsContainer form {
+    background: rgba(0, 0, 0, 0.705);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.26);
+  }
+
+  .footerContainer {
+    background-color: white;
+  }
+  
+}
