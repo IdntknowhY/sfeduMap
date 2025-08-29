@@ -40,7 +40,7 @@ export const Questions = () => {
     const GetData = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('/api/alldata', {
+            const response = await fetch('api/alldata', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
             });
