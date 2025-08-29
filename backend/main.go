@@ -9,7 +9,8 @@ import (
 	"sfeduMAP/backend/src/api/service"
 	"sfeduMAP/backend/src/db"
 	"sfeduMAP/backend/src/repository"
-
+	"os"
+	"strings"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )

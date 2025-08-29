@@ -1,0 +1,40 @@
+
+services:
+  app:
+    image: ghcr.io/idntknowhy/sfedumap/sfedumapback:latest
+    environment:
+      - ALLOWED_ORIGINS=
+      - DB_HOST=db
+      - DB_USER=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_NAME=${POSTGRES_DATABASE}
+    ports:
+      - "8080"
+    depends_on:
+      - db
+    restart: always
+
+  web:
+    container_name: frontend
+    image: ghcr.io/idntknowhy/sfedumap/sfedumapfront:latest
+    ports:
+      - "2994:80"
+    depends_on:
+      - app
+    restart: always
+
+  db:
+    container_name: postgre
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE}
+    ports:
+      - 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
