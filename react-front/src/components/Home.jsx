@@ -152,7 +152,7 @@ export const Home = () => {
             setMainData({ titles: [], questions: [] });
             setError(null);
 
-            const url = new URL('http://localhost:8080/api/data');
+            const url = new URL('/api/data');
 
             const response = await fetch(url, {
                 method: 'GET',
@@ -215,7 +215,7 @@ export const Home = () => {
     const sendUserQuestion = async (formData) => {
         try{
 
-            const url = new URL('http://localhost:8080/api/post/addquestion')
+            const url = new URL('/api/post/addquestion')
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -285,7 +285,7 @@ export const Home = () => {
             </nav>
 
             <div className="container">
-                <img className='max-w-[160px] dark:invert dark:brightness-150' src="src/assets/image.png" alt="error" />
+                <img className='max-w-[160px] dark:invert dark:brightness-150' src="../assets/image.png" alt="error" />
                 <nav>
                     <ul className="nav-list">
                     <li>
@@ -464,7 +464,7 @@ export const Home = () => {
                     <div className="mb-4 md:mb-0 md:mr-6 flex justify-center">
                         <img 
                         className="max-w-[160px] md:max-w-[180px]" 
-                        src="/src/assets/ictis.png" 
+                        src="../assets/ictis.png" 
                         alt="ICTIS Logo" 
                         />
                     </div>

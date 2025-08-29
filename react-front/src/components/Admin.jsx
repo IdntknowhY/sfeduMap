@@ -65,7 +65,7 @@ export const Admin = () => {
 
     const LoginIn = async () => {
         try{
-            const url = new URL('http://localhost:8080/api/admin/login')
+            const url = new URL('/api/admin/login')
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -120,7 +120,7 @@ export const Admin = () => {
     const getUserQuestions = async () => {
         try {
             console.log("Fetching questions...");
-            const response = await fetch('http://localhost:8080/api/get/userquestion');
+            const response = await fetch('/api/get/userquestion');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -164,7 +164,7 @@ export const Admin = () => {
                 throw new Error('Authentication required');
             }
 
-            const response = await fetch('http://localhost:8080/api/admin/deletequestion', {
+            const response = await fetch('/api/admin/deletequestion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ export const Admin = () => {
             }
 
             console.log("reqbody: ",requestBody)
-            const url = new URL("http://localhost:8080/api/admin/insert")
+            const url = new URL("/api/admin/insert")
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -469,7 +469,7 @@ export const Admin = () => {
                             <div className="flex flex-col md:flex-row justify-between items-center">
                                 <div className="mb-6 md:mb-0">
                                     <img 
-                                        src="/src/assets/ictis.png" 
+                                        src="../assets/ictis.png" 
                                         alt="ICTIS Logo" 
                                         className="h-12"
                                     />
