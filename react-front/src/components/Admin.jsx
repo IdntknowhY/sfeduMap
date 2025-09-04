@@ -65,7 +65,7 @@ export const Admin = () => {
 
     const LoginIn = async () => {
         try{
-            const url = new URL('api/admin/login')
+            const url = new URL('/admin/login')
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -120,7 +120,7 @@ export const Admin = () => {
     const getUserQuestions = async () => {
         try {
             console.log("Fetching questions...");
-            const response = await fetch('api/get/userquestion');
+            const response = await fetch('/get/userquestion');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -164,7 +164,7 @@ export const Admin = () => {
                 throw new Error('Authentication required');
             }
 
-            const response = await fetch('api/admin/deletequestion', {
+            const response = await fetch('/admin/deletequestion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ export const Admin = () => {
             }
 
             console.log("reqbody: ",requestBody)
-            const url = new URL("api/admin/insert")
+            const url = new URL("/admin/insert")
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {

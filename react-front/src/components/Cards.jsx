@@ -31,7 +31,7 @@ export const Card = ({ question, answer, questionId, titleid, option }) => {
                 throw new Error('Authentication required');
             }
 
-            const url = new URL("api/admin/update")
+            const url = new URL("/admin/update")
             
             const response = await fetch(url, {
                 method: 'UPDATE',
@@ -75,7 +75,7 @@ export const Card = ({ question, answer, questionId, titleid, option }) => {
                 throw new Error('Authentication required');
             }
 
-            const url = new URL("api/admin/delete")
+            const url = new URL("/admin/delete")
 
             const response = await fetch(url, {
                 method: 'DELETE',
