@@ -18,6 +18,8 @@ import Dm from '../assets/Dorms.png';
 import Nv from '../assets/navigation.png';
 import Sl from '../assets/social_life .png';
 import Sf from '../assets/safety.png';
+import mainlogo from '../assets/image.png'
+import ictispng from '../assets/ictis.png'
 
 
 export const Home = () => {
@@ -285,7 +287,7 @@ export const Home = () => {
             </nav>
 
             <div className="container">
-                <img className='max-w-[160px] dark:invert dark:brightness-150' src="../assets/image.png" alt="error" />
+                <img className='max-w-[160px] dark:invert dark:brightness-150' src={mainlogo} alt="error" />
                 <nav>
                     <ul className="nav-list">
                     <li>
@@ -464,7 +466,7 @@ export const Home = () => {
                     <div className="mb-4 md:mb-0 md:mr-6 flex justify-center">
                         <img 
                         className="max-w-[160px] md:max-w-[180px]" 
-                        src="../assets/ictis.png" 
+                        src={ictispng}
                         alt="ICTIS Logo" 
                         />
                     </div>
