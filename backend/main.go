@@ -4,48 +4,42 @@ import (
 	"bytes"
 	"io"
 	"log"
-	handler "sfeduMAP/backend/src/api/handlers"
+	h "sfeduMAP/backend/src/api/handlers"
 	route "sfeduMAP/backend/src/api/routes"
 	"sfeduMAP/backend/src/api/service"
 	"sfeduMAP/backend/src/db"
-	"sfeduMAP/backend/src/repository"
-	"os"
-	"strings"
+	rp "sfeduMAP/backend/src/repository"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	dbConnection, err := db.ConnectDB()
+
+	dbConn, err := db.ConnectDB()
 	if err != nil {
 		log.Fatalf("Ошибка подключения к базе данных: %v", err)
 	}
-	defer dbConnection.Close()
+	defer dbConn.Close()
 
-	repo := &repository.SearchEngine{Database: dbConnection}
-	scv := &service.QuestionService{Repo: repo}
-	handler.DbAPIConn = scv
-
-	allowedOrigins := os.Getenv("ALLOWED_ORIGINS")
-	if allowedOrigins == "" {
-		allowedOrigins = "http://localhost:3000,http://127.0.0.1:3000"
-	}
-
-	origins := strings.Split(allowedOrigins, ",")
+	adminConn := &h.Authorization{AdminSessions: []string{}}
+	var repI rp.SearchEngined = &rp.SearchEngine{DatabaseUser: dbConn, DatabaseAdmin: nil}
+	ser := &service.QuestionService{Repo: repI}
+	h.DBService = ser
 
 	r := gin.Default()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 	r.Use(LoggingRequests)
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     origins,
+		AllowOrigins:     []string{"http://localhost:3000"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
 
-	route.SetupRoutes(r)
+	route.SetupRoutes(r, adminConn)
 
 	log.Println("Сервер запущен на http://localhost:8080")
 	if err := r.Run(":8080"); err != nil {

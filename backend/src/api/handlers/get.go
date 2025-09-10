@@ -4,19 +4,16 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"sfeduMAP/backend/src/api/service"
 	module "sfeduMAP/backend/src/modules"
+	rp "sfeduMAP/backend/src/repository"
 
 	"github.com/gin-gonic/gin"
 )
 
-var DbAPIConn *service.QuestionService
-
 func GetQuestionsUnload(c *gin.Context) {
 	log.Println("Вызов функции GetQuestionsUnload")
-	titleAPI, questionAPI, err := DbAPIConn.GetDocumentQuestions()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Ошибка при получении данных"})
+	titleAPI, questionAPI, err := DBService.GetDocumentQuestions()
+	if rp.CheckError(c, http.StatusInternalServerError, err, "Ошибка при получении данных") {
 		return
 	}
 
@@ -30,9 +27,8 @@ func GetQuestionsUnload(c *gin.Context) {
 
 func GetUserQuestionUnload(c *gin.Context) {
 	log.Println("Вызов функции GetUserQuestionUnload")
-	userQuestion, err := DbAPIConn.GetReadUserQuestion()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Ошибка при получении данных"})
+	userQuestion, err := DBService.GetReadUserQuestion()
+	if rp.CheckError(c, http.StatusInternalServerError, err, "Ошибка при получении данных") {
 		return
 	}
 	c.JSON(http.StatusOK, userQuestion)
@@ -40,9 +36,8 @@ func GetUserQuestionUnload(c *gin.Context) {
 
 func GetAllQuestionsUnload(c *gin.Context) {
 	log.Println("Вызов функции GetAllQuestionsUnload")
-	titleAPI, questionAPI, err := DbAPIConn.GetAllQuestions()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Ошибка при получении данных"})
+	titleAPI, questionAPI, err := DBService.GetAllQuestions()
+	if rp.CheckError(c, http.StatusInternalServerError, err, "Ошибка при получении данных") {
 		return
 	}
 
@@ -58,13 +53,11 @@ func GetQuestionsSearch(c *gin.Context) {
 	log.Println("Вызов функции GetQuestions")
 	var ID_T module.TitleID
 	err := c.ShouldBindJSON(&ID_T)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Неверный формат JSON"})
+	if rp.CheckError(c, http.StatusInternalServerError, err, "Неверный формат JSON") {
 		return
 	}
-	questionAPI, err := DbAPIConn.GetSearchQuestions(ID_T.TID)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Ошибка выгрузки данных из базы данных"})
+	questionAPI, err := DBService.GetSearchQuestions(ID_T.TID)
+	if rp.CheckError(c, http.StatusInternalServerError, err, "Ошибка выгрузки данных из базы данных") {
 		return
 	}
 	c.JSON(http.StatusOK, questionAPI)

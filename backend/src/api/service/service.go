@@ -2,11 +2,11 @@ package service
 
 import (
 	module "sfeduMAP/backend/src/modules"
-	"sfeduMAP/backend/src/repository"
+	rp "sfeduMAP/backend/src/repository"
 )
 
 type QuestionService struct {
-	Repo *repository.SearchEngine
+	Repo rp.SearchEngined
 }
 
 func (db *QuestionService) GetAllQuestions() ([]module.TypeQuestions, []module.Question, error) {

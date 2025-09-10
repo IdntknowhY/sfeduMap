@@ -60,3 +60,16 @@ type TitleID struct {
 type QuestionID struct {
 	ID int `json:"qid"`
 }
+
+type TokenAutorization struct {
+	Token string `json:"token"`
+	Exp   int    `json:"expires_in"`
+}
+
+type ErrorMessage struct {
+	Error string `json:"error"`
+}
+
+type Message struct {
+	Message string `json:"message"`
+}
