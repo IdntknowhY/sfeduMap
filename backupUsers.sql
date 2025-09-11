@@ -1,0 +1,33 @@
+--
+-- PostgreSQL database cluster dump
+--
+
+SET default_transaction_read_only = off;
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+
+--
+-- Roles
+--
+
+CREATE ROLE adminapp;
+ALTER ROLE adminapp WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:7zmoZe0XsJ+eKHcsT7obdw==$PkhVz2KlvJ42aG7zwsr4jRyEeLK6M562WY20Tyl3//k=:/FRNjm0ycuuNgeMosq99nUc+e7/NIWV4Vk75E8gEB+E=';
+CREATE ROLE qadmin;
+ALTER ROLE qadmin WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:A4zdZ6g7kRDH2jlgxY1aDQ==$WpzQB0aDgWHqJvqVGTV4OnEDHQva7AHif+8lIoQojbU=:+xKARN08Veb7IVYbkgiX0zAwN+71gI6OgTHagM/ebxw=';
+CREATE ROLE qdb;
+ALTER ROLE qdb WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:pWeiVGSyU+fexv7NaWXFpA==$BO4j1RtV9wCkDe7vmyHNPx3Ieogilr/hdX+DJYoVVjE=:8YCnruA7mr6Y54iN4AELgOKwOTCHXmogLevt6krXAoo=';
+
+--
+-- User Configurations
+--
+
+
+
+
+
+
+--
+-- PostgreSQL database cluster dump complete
+--
+

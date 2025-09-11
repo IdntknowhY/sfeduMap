@@ -7,13 +7,6 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine, adminConn *h.Authorization) {
-	r.Static("/maps360", "../maps360")
-	r.OPTIONS("/api/*any", func(c *gin.Context) {
-		c.Header("Access-Control-Allow-Origin", "http://localhost:3000")
-		c.Header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
-		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
-		c.AbortWithStatus(204)
-	})
 	api := r.Group("/api")
 	{
 		api.GET("/data", h.GetQuestionsUnload)
@@ -22,6 +15,7 @@ func SetupRoutes(r *gin.Engine, adminConn *h.Authorization) {
 		api.GET("/get/userquestion", h.GetUserQuestionUnload)
 		api.POST("/post/addquestion", h.AddUserQuestion)
 		api.POST("/admin/login", h.AdminLoginHandler(adminConn))
+		api.GET("/healthz", func(c *gin.Context) { c.Status(204) })
 		admin := api.Group("/admin")
 		admin.Use(h.AdminAuthMiddleware(adminConn))
 		{

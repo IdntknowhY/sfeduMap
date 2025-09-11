@@ -15,24 +15,25 @@ type ConnectData struct {
 	DBNAME   string
 }
 
-var (
-	DefaultConnection = ConnectData{
-		SERVER:   "localhost",
+func initDB() ConnectData {
+	return ConnectData{
+		SERVER:   "database",
 		USERNAME: "qdb",
 		PASSWORD: "QuestionsDB",
 		DBNAME:   "questionsDB",
 	}
-)
+}
 
 // Обычное подключение
 func ConnectDB() (*sql.DB, error) {
+	DefaultConnection := initDB()
 	return ConnectPostgreSQL(&DefaultConnection)
 }
 
 // Подключение через админа
 func ConnectEditDB(username string, password string) (*sql.DB, error) {
 	ConnectionEdit := ConnectData{
-		SERVER:   "localhost",
+		SERVER:   "database",
 		USERNAME: username,
 		PASSWORD: password,
 		DBNAME:   "questionsDB",

@@ -154,7 +154,7 @@ export const Home = () => {
             setMainData({ titles: [], questions: [] });
             setError(null);
 
-            const url = new URL('/data');
+            const url = new URL('/api/data');
 
             const response = await fetch(url, {
                 method: 'GET',

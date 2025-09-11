@@ -1,40 +1,74 @@
-
 services:
-  app:
-    image: ghcr.io/idntknowhy/sfedumap/sfedumapback:latest
-    environment:
-      - ALLOWED_ORIGINS=
-      - DB_HOST=db
-      - DB_USER=${POSTGRES_USER}
-      - DB_PASSWORD=${POSTGRES_PASSWORD}
-      - DB_NAME=${POSTGRES_DATABASE}
-    ports:
-      - "8080"
-    depends_on:
-      - db
+  proxy:
+    image: nginx:1.26
+    container_name: proxy
     restart: always
-
-  web:
-    container_name: frontend
-    image: ghcr.io/idntknowhy/sfedumap/sfedumapfront:latest
     ports:
-      - "2994:80"
-    depends_on:
-      - app
-    restart: always
-
-  db:
-    container_name: postgre
-    image: postgres:17-alpine
-    restart: always
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DATABASE=${POSTGRES_DATABASE}
-    ports:
-      - 5432
+      - "80:80"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./maps360:/usr/share/nginx/html/maps360:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - outside
+      - sfedu-map
 
-volumes:
-  postgres_data:
+  database:
+    image: postgres:17.5
+    container_name: database
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+     - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+     - ./backupUsers.sql:/docker-entrypoint-initdb.d/abackupUsers.sql
+    networks:
+      - sfedu-map
+
+  backend:
+    build: 
+      context: backend
+    container_name: backend
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/healthz >/dev/null || exit 1"]
+      interval: 90s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - sfedu-map
+
+  frontend:
+    build: 
+      context: ./react-front
+    container_name: frontend
+    restart: always
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - sfedu-map
+
+networks:
+  sfedu-map:
+    name: sfedu-map
+    driver: bridge
+    internal: true
+
+  outside:
+    name: outside
+    driver: bridge

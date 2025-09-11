@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Building G</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-building-g">
+        <li class="text">Building G</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-g-1-stairs">
+        <li class="text">G-1 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-g-1-2-stairs">
+        <li class="text">G-1-2 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-g-3-stairs">
+        <li class="text">G-3 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-g-3-4-stairs">
+        <li class="text">G-3-4 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-g-4-stairs">
+        <li class="text">G-4 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-passage-from-g-to-d">
+        <li class="text">Passage from G to D</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-g-301">
+        <li class="text">G-301</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-g-301-stairs">
+        <li class="text">G-301 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-g-302">
+        <li class="text">G-302</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-g-304">
+        <li class="text">G-304</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-g-307">
+        <li class="text">G-307</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-g-309-wc">
+        <li class="text">G-309 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-g-309">
+        <li class="text">G-309</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-g-312">
+        <li class="text">G-312</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-g-315">
+        <li class="text">G-315</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-g-320">
+        <li class="text">G-320</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-g-3-buffet">
+        <li class="text">G-3 Buffet</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-g-323">
+        <li class="text">G-323</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-g-326">
+        <li class="text">G-326</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-g-330">
+        <li class="text">G-330</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="21-g-331">
+        <li class="text">G-331</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="22-g-332">
+        <li class="text">G-332</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="23-g-333">
+        <li class="text">G-333</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="24-g-335">
+        <li class="text">G-335</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="25-g-336-wc">
+        <li class="text">G-336 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="26-g-339">
+        <li class="text">G-339</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="27-g-342-stairs">
+        <li class="text">G-342 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="28-g-341">
+        <li class="text">G-341</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="29-g-401-stairs">
+        <li class="text">G-401 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="30-g-403">
+        <li class="text">G-403</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="31-g-405-wc">
+        <li class="text">G-405 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="32-g-407">
+        <li class="text">G-407</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="33-g-408">
+        <li class="text">G-408</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="34-g-410">
+        <li class="text">G-410</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="35-g-412">
+        <li class="text">G-412</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="36-g-414">
+        <li class="text">G-414</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="37-g-439">
+        <li class="text">G-439</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="38-g-418">
+        <li class="text">G-418</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="39-g-421">
+        <li class="text">G-421</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="40-g-423">
+        <li class="text">G-423</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="41-g-426">
+        <li class="text">G-426</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="42-g-427">
+        <li class="text">G-427</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="43-g-429">
+        <li class="text">G-429</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="44-g-442">
+        <li class="text">G-442</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="45-g-431-wc">
+        <li class="text">G-431 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="46-g-433">
+        <li class="text">G-433</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="47-g-436-stairs">
+        <li class="text">G-436 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="48-g-437">
+        <li class="text">G-437</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="49-building-d">
+        <li class="text">Building D</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="50-building-d-entrance">
+        <li class="text">Building D Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="51-d-1-l-stairs">
+        <li class="text">D-1 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="52-d-1-2-l-stairs">
+        <li class="text">D-1-2 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="53-d-2-l-stairs">
+        <li class="text">D-2 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="54-d-2-3-l-stairs">
+        <li class="text">D-2-3 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="55-d-3-l-stairs">
+        <li class="text">D-3 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="56-d-3-4-l-stairs-">
+        <li class="text">D-3-4 L Stairs </li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="57-d-4-l-stairs">
+        <li class="text">D-4 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="58-d-4-5-l-stairs">
+        <li class="text">D-4-5 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="59-d-5-l-stairs">
+        <li class="text">D-5 L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="60-d-1-r-stairs">
+        <li class="text">D-1 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="61-d-1-2-r-stairs">
+        <li class="text">D-1-2 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="62-d-2-3-r-stairs">
+        <li class="text">D-2-3 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="63-d-3-r-stairs">
+        <li class="text">D-3 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="64-d-3-4-r-stairs">
+        <li class="text">D-3-4 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="65-d-4-5-r-stairs">
+        <li class="text">D-4-5 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="66-d-5-r-stairs">
+        <li class="text">D-5 R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="67-d-1-turnstile">
+        <li class="text">D-1 Turnstile</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="68-d-1-cloakroom">
+        <li class="text">D-1 Cloakroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="69-d-1-exit">
+        <li class="text">D-1 Exit</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="70-d-1-cafeteria">
+        <li class="text">D-1 Cafeteria</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="71-winter-garden">
+        <li class="text">Winter Garden</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="72-winter-garden-r-stairs">
+        <li class="text">Winter Garden R Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="73-winter-garden-r-exit">
+        <li class="text">Winter Garden R Exit</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="74-winter-garden-r-c-stairs--exit">
+        <li class="text">Winter Garden R C Stairs / Exit</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="75-winter-garden-l-c-stairs--exit">
+        <li class="text">Winter Garden L C Stairs / Exit</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="76-winter-garden-l-exit">
+        <li class="text">Winter Garden L Exit</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="77-cafeteria--winter-garden-l-stairs">
+        <li class="text">Cafeteria / Winter Garden L Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="78-d-226">
+        <li class="text">D-226</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="79-d-223">
+        <li class="text">D-223</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="80-d-2-">
+        <li class="text">D-2 Л</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="81-d-228-1">
+        <li class="text">D-228-1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="82-d-206">
+        <li class="text">D-206</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="83-d-212">
+        <li class="text">D-212</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="84-d-2-r">
+        <li class="text">D-2 R</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="85-d-2-hallway-1">
+        <li class="text">D-2 Hallway 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="86-d-2-hallway-2">
+        <li class="text">D-2 Hallway 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="87-d-2-232-1">
+        <li class="text">D-2 232-1а</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="88-d-211-wc">
+        <li class="text">D-211 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="89-d-317">
+        <li class="text">D-317</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="90-d-304">
+        <li class="text">D-304</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="91-d-311">
+        <li class="text">D-311</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="92-d-3-wc">
+        <li class="text">D-3 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="93-passage-from-d-to-g">
+        <li class="text">Passage from D to G</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="94-passage">
+        <li class="text">Passage</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="95-d-419">
+        <li class="text">D-419</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="96-d-416">
+        <li class="text">D-416</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="97-d-4-l">
+        <li class="text">D-4 L</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="98-d-414">
+        <li class="text">D-414</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="99-d-405">
+        <li class="text">D-405</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="100-d-411">
+        <li class="text">D-411</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="101-d-4-r">
+        <li class="text">D-4 R</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="102-d-416-wc">
+        <li class="text">D-416 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="103-d-4-wc">
+        <li class="text">D-4 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="104-d-407">
+        <li class="text">D-407</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="105-d-525">
+        <li class="text">D-525</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="106-d-522">
+        <li class="text">D-522</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="107-d-5-l">
+        <li class="text">D-5 L</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="108-d-506">
+        <li class="text">D-506</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="109-d-509">
+        <li class="text">D-509</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="110-d-515">
+        <li class="text">D-515</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="111-d-5-r-">
+        <li class="text">D-5 R </li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="112-d-514-wc">
+        <li class="text">D-514 WC</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="113-d-511">
+        <li class="text">D-511</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
