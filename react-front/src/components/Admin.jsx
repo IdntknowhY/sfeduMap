@@ -120,7 +120,7 @@ export const Admin = () => {
     const getUserQuestions = async () => {
         try {
             console.log("Fetching questions...");
-            const response = await fetch('/get/userquestion');
+            const response = await fetch('/api/get/userquestion');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -164,7 +164,7 @@ export const Admin = () => {
                 throw new Error('Authentication required');
             }
 
-            const response = await fetch('/admin/deletequestion', {
+            const response = await fetch('/api/admin/deletequestion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
