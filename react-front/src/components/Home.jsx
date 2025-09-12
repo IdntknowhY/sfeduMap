@@ -217,7 +217,7 @@ export const Home = () => {
     const sendUserQuestion = async (formData) => {
         try{
 
-            const url = '/post/addquestion';
+            const url = '/api/post/addquestion';
 
             const response = await fetch(url, {
                 method: 'POST',
