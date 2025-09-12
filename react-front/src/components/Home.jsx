@@ -154,7 +154,7 @@ export const Home = () => {
             setMainData({ titles: [], questions: [] });
             setError(null);
 
-            const url = new URL('/api/data');
+            const url = '/api/data';
 
             const response = await fetch(url, {
                 method: 'GET',
@@ -217,7 +217,7 @@ export const Home = () => {
     const sendUserQuestion = async (formData) => {
         try{
 
-            const url = new URL('/post/addquestion')
+            const url = '/post/addquestion';
 
             const response = await fetch(url, {
                 method: 'POST',

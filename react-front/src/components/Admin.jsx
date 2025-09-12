@@ -65,7 +65,7 @@ export const Admin = () => {
 
     const LoginIn = async () => {
         try{
-            const url = new URL('/admin/login')
+            const url = '/admin/login';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -238,7 +238,7 @@ export const Admin = () => {
             }
 
             console.log("reqbody: ",requestBody)
-            const url = new URL("/admin/insert")
+            const url = "/admin/insert";
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
