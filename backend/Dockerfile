@@ -14,6 +14,8 @@ FROM alpine:3.21 AS final
 
 COPY --from=builder /bin/app /bin/appendix
 
+LABEL org.opencontainers.image.source=https://github.com/IdntknowhY/sfeduMap
+
 EXPOSE 8080
 
 ENTRYPOINT ["/bin/appendix"]
