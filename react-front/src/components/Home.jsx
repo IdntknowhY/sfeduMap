@@ -429,25 +429,20 @@ export const Home = () => {
                 <h4 className='arti_h2'>{t("ps_info")}</h4>
             </div>
 
+
             <Carousel 
-                images={[a, b, d, g, ee, e, k]} 
+                images={[a, b, d, g]} 
                 descriptions={[
                     t("Building - A"), 
                     t("Building - B"),
                     t("Building - D"),
-                    t("Building - G"),
-                    t("Building - I"),
-                    t("Building - E"),
-                    t("Building - K")
+                    t("Building - G")
                 ]}
                 buttons={[
-                    { text: t("To view panoramas"), url: "/a360" },
-                    { text: t("To view panoramas"), url: "/b360" },
-                    { text: t("To view panoramas"), url: "/d360" },
-                    { text: t("To view panoramas"), url: "/g360" },
-                    { text: t("To view panoramas"), url: "/i360" },
-                    { text: t("To view panoramas"), url: "/e360" },
-                    { text: t("To view panoramas"), url: "/k360" }
+                    { text: t("To view panoramas"), url: "/maps360/building-a/app-files/index.html" },
+                    { text: t("To view panoramas"), url: "/maps360/building-b/app-files/index.html" },
+                    { text: t("To view panoramas"), url: "/maps360/building-d/app-files/index.html" },
+                    { text: t("To view panoramas"), url: "/maps360/building-g/app-files/index.html" }
                 ]}
             />
 
